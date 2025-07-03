@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+   
+    <title>Signin</title>
+</head>
+<body>
+    <%- include('./partials/nav') %>
+    <% if (locals.error) { %>
+  <div class="alert alert-danger" role="alert">
+  <%= locals.error %>
+  </div>
+<% } %>
+    <h1><b>Welcome, The GOAT Coder :</b> <b><u><%= user.fullName %></u></b></h1>
+    <img src="<%= user.profileImageURL %>" alt="Profile Image" width="100" />
+    <p><strong>User ID:</strong> <%= user._id %></p>
+    <p><strong>Email:</strong> <%= user.email %></p>
+    <p><strong>Role:</strong> <%= user.role %></p>
+    <a href="/user/logout">Logout</a>
+    <%- include('./partials/script') %>
+</body>
+</html>
